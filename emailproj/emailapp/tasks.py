@@ -1,5 +1,8 @@
 # Create your tasks here
 from __future__ import absolute_import, unicode_literals
+
+from datetime import time
+
 from celery import shared_task
 
 
@@ -16,3 +19,7 @@ def mul(x, y):
 @shared_task
 def xsum(numbers):
     return sum(numbers)
+
+@shared_task
+def delaytime(test):
+    time.sleep(test)
